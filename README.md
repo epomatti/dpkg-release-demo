@@ -8,7 +8,7 @@ Copy the dynamic configuration file:
 cp templates/install.conf release/etc/contoso/install.conf
 ```
 
-Change the permissions if necessary:
+If required, change the permissions if necessary:
 
 ```sh
 sudo chown -R root:root release/*
@@ -19,7 +19,7 @@ Bake any custom properties in the build, preferably through a CI/CD pipeline. Ad
 Build the `.deb` executable:
 
 ```sh
-dpkg-deb --build release contoso.deb
+dpkg-deb --build release dist/contoso.deb
 ```
 
 Copy the file generate to the remote destination.
