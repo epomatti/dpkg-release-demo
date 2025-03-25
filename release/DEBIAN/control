@@ -1,0 +1,8 @@
+Package: contoso-agent
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: bash
+Maintainer: Evandro Pomatti <evandro@pomatti.io>
+Description: A simple Bash script packaged as a .deb
