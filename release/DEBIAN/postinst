@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e  # Exit immediately if a command exits with a non-zero status
+
+echo "Running post-install script..."
+
+script=/etc/contoso/install.sh
+
+# Make sure the script is executable
+chmod +x "$script"
+
+# Optionally, execute the script immediately upon installation
+"$script"
+
+echo "Installation completed!"
