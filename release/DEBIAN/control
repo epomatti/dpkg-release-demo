@@ -4,5 +4,5 @@ Section: utils
 Priority: optional
 Architecture: all
 Depends: bash
-Maintainer: Evandro Pomatti <evandro@pomatti.io>
+Maintainer: John Doe <john@example.com>
 Description: A simple Bash script packaged as a .deb
