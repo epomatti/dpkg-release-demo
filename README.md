@@ -9,7 +9,7 @@ cp templates/install.conf release/etc/contoso/install.conf
 If required, change the permissions according to requirements:
 
 > [!TIP]
-> 
+> CI/CD will change permissions. Make sure permissions are set during installation
 
 ```sh
 sudo chown -R root:root release/*
