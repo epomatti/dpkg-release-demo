@@ -2,6 +2,10 @@
 
 This is a simple functional template to release programs with `dpkg`.
 
+## Build
+
+https://breakingbadquotes.xyz/
+
 ## Manual Build
 
 Copy the template configuration file:
