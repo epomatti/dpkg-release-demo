@@ -9,5 +9,11 @@ make deb-package
 Installation command:
 
 ```sh
-sudo dpkg -i contoso.deb
+sudo dpkg -i dist/quotes.deb
+```
+
+Get quotes:
+
+```sh
+sudo /etc/quotes/quotes
 ```

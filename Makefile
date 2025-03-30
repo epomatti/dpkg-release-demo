@@ -17,7 +17,7 @@ deb-package:
 		cp -r deb-package dist
 		cp build/quotes "${DEBIAN_DIST}/etc/quotes"
 		chmod -R 0755 "${DEBIAN_DIST}"
-		dpkg-deb --build "${DEBIAN_DIST}" dist/quotes
+		dpkg-deb --build "${DEBIAN_DIST}" dist/quotes.deb
 
 clean-build:
 		rm -rf build
