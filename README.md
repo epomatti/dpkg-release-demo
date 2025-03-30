@@ -1,41 +1,12 @@
 # `dpkg` Release
 
-This is a simple functional template to release programs with `dpkg`.
-
-## Build
-
-https://breakingbadquotes.xyz/
-
-## Manual Build
-
-Copy the template configuration file:
+Quotes app with a `dpkg` release. To make a new Debian package:
 
 ```sh
-cp templates/install.conf release/etc/contoso/install.conf
+make deb-package
 ```
 
-If required, change the permissions according to requirements:
-
-> [!TIP]
-> CI/CD will change permissions. Make sure permissions are set during installation
-
-```sh
-sudo chown -R root:root release/*
-```
-
-Write the output to a separate directory:
-
-```sh
-mkdir -p dist
-```
-
-Build the `.deb` executable:
-
-```sh
-dpkg-deb --build release dist/contoso.deb
-```
-
-Run and install the Debian release:
+Installation command:
 
 ```sh
 sudo dpkg -i contoso.deb
