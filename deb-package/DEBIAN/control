@@ -1,8 +1,8 @@
-Package: contoso-agent
+Package: quotes
 Version: 1.0
 Section: utils
 Priority: optional
 Architecture: all
 Depends: bash
 Maintainer: John Doe <john@example.com>
-Description: A simple Bash script packaged as a .deb
+Description: Quotes app
