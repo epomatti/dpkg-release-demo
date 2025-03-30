@@ -1,21 +1,28 @@
-# #!/bin/bash
+# Forcing it to build, as the directory has the same name
+# https://stackoverflow.com/a/59558099/3231778
+.PHONY: build deb-package
 
-# PKG_NAME="contoso-agent"
-# VERSION="1.0"
-# ARCH="all"
-# OUTPUT_FILE="${PKG_NAME}_${VERSION}_${ARCH}.deb"
-
-# # Ensure correct permissions
-# chmod -R 755 my-script/usr/local/bin/
-
-# # Build the .deb package with a custom name
-# dpkg-deb --build my-script "$OUTPUT_FILE"
-
-# echo "Package built: $OUTPUT_FILE"
+DEB_DIST_DIR := deb-package/deb
+BINARY_BUILD := build/quotes
+BINARY_DIST := "${DEB_DIST_DIR}/etc/quotes"
 
 build:
-		@mkdir -p build
-		@go build -o build/quotes
+		mkdir -p build
+		go build -o "${BINARY_BUILD}"
 
 up:
-		@go run .
+		go run .
+
+deb-package:
+		$(MAKE) clean-build clean-package-debian build		
+		mkdir -p "${BINARY_DIST}"
+		cp -r deb-package "${DEB_DIST_DIR}"
+		cp "${BINARY_BUILD}" "${BINARY_DIST}/quotes"
+		chmod -R 0555 dist/deb/DEBIAN
+		dpkg-deb --build deb-package ${BINARY_BUILD}
+
+clean-build:
+		rm -rf build
+
+clean-package-debian:
+		rm -rf dist/debian
